@@ -6,13 +6,24 @@
   - ESP 32 WROOM (Wireless Room) Development Board
   - Simple Monochrome 128x64 OLED Graphic Display
 
-2. Setup the Arduino IDE with the ESP 32 espressive systems libraries
+## Setting Up the Software
+1. Install the ESP32 espressif systems board into the Arudino IDE by pasting the link below into the additonal boards URL
+```
+https://espressif.github.io/arduino-esp32/package_esp32_index.json
+```
+2. Clone the repository
+```bash
+$ git clone https://github.com/TETRA888/Profilometer.git
+$ cd Profilometer
+```
+2. Open the .ino file using Arduino and change the following parameters
+```
+```
+4. Connect and Upload it to your ESP 32 
 
-3. Pick a website or multiple websites that you wish to monitor
-  
 5. Next to make the display more visually appealing include the website icon/favicon/logo
 
-# Converting the logo into a Xbitmap using GIMP
+## Converting the website logo into a Xbitmap using GIMP
 ![image](https://github.com/user-attachments/assets/0ccf18a0-7d0a-41d5-9bee-53ce1166b987)
 ![image](https://github.com/user-attachments/assets/247fc7ff-2364-4bc6-86be-90f9761bbfc7)
 
