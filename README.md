@@ -1,4 +1,4 @@
-# ESP32 Custom Down Detector
+<div align = "center"> 'ESP 32 Server Status Detector' </div>
 Creating a simple portable down detector that you can place on your shelf to monitor your server status live!
 
 1. The required hardware components are as follows
