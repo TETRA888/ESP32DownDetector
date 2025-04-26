@@ -30,6 +30,10 @@ $ cd Profilometer
 ### After refining the raw Xbitmap with GIMP and down scaling it to fix onto the 128x64 pixel display I get something like this:
 ![image](https://github.com/user-attachments/assets/504ba6d7-181e-454e-8082-d2c6c1363dd3)
 
+### Rendering it on the monochrome display yields the following result:
+![image](https://github.com/user-attachments/assets/e76d8206-620f-41c5-989f-af7a30287563)
+
+
 
 
 
