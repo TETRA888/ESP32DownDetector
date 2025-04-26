@@ -5,6 +5,8 @@
 1. The required hardware components are as follows
   - ESP 32 WROOM (Wireless Room) Development Board
   - Simple Monochrome 128x64 OLED Graphic Display
+  - Wires
+  - Breadboard or PCB
 
 ## Setting Up the Software
 1. Install the ESP32 espressif systems board into the Arudino IDE by pasting the link below into the additonal boards URL (Inside the Arduino IDE go to -> File -> Preferences -> Additional boards manager URLS)
