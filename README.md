@@ -13,7 +13,6 @@ https://espressif.github.io/arduino-esp32/package_esp32_index.json
 ```
 3. In the Arduino Libarary Manager, install the additional following libraries for the display:
 ```
-ESP 32
 Adafruit BusIO
 Adafruit GFX Library
 Adafruit SSD 1306 
