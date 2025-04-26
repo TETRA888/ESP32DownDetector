@@ -7,7 +7,7 @@
   - Simple Monochrome 128x64 OLED Graphic Display
 
 ## Setting Up the Software
-1. Install the ESP32 espressif systems board into the Arudino IDE by pasting the link below into the additonal boards URL
+1. Install the ESP32 espressif systems board into the Arudino IDE by pasting the link below into the additonal boards URL (Inside the Arduino IDE go to -> File -> Preferences -> Additional boards manager URLS)
 ```
 https://espressif.github.io/arduino-esp32/package_esp32_index.json
 ```
