@@ -27,9 +27,7 @@ $ cd Profilometer
 ![image](https://github.com/user-attachments/assets/0ccf18a0-7d0a-41d5-9bee-53ce1166b987)
 ![image](https://github.com/user-attachments/assets/247fc7ff-2364-4bc6-86be-90f9761bbfc7)
 
-### After refining the raw Xbitmap with GIMP I get something like this
-![image](https://github.com/user-attachments/assets/048058d4-6275-49f8-93b9-e102602bdcc1)
-
+### After refining the raw Xbitmap with GIMP and down scaling it to fix onto the 128x64 pixel display I get something like this:
 ![image](https://github.com/user-attachments/assets/504ba6d7-181e-454e-8082-d2c6c1363dd3)
 
 
