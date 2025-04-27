@@ -62,7 +62,7 @@ client.println("Host: blog.jaysa.net");
 ![image](https://github.com/user-attachments/assets/e76d8206-620f-41c5-989f-af7a30287563)
 
 ## Including a custom Xbitmap
-### Paste your custom Xbitmap in the following array
+### Paste your custom Xbitmap in the following array inside the ServerStatusGraphics.hpp file
 ```c++
 static const unsigned char PROGMEM web_xbmp[]{...}
 ```
