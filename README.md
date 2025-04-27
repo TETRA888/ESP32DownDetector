@@ -8,6 +8,13 @@
   - Wires
   - Breadboard or PCB
 
+## Setting up the Hardware
+### On the OLED connect
+1.  GND -> GND
+2. VDD -> 3V3
+3. SCK -> D13 or D21
+4. SDA -> D14 or D22
+
 ## Setting Up the Software
 1. Install the ESP32 espressif systems board into the Arudino IDE by pasting the link below into the additonal boards URL (Inside the Arduino IDE go to -> File -> Preferences -> Additional boards manager URLS)
 ```
@@ -24,8 +31,21 @@ Adafruit SSD 1306
 $ git clone https://github.com/TETRA888/Profilometer.git
 $ cd Profilometer
 ```
-2. Open the .ino file using Arduino and change the following parameters
-```
+2. Open the WebsiteExtraction.cpp file using Arduino and change the following parameters
+```c++
+const char* ssid = "XXXX"; // Your Wifi SSID
+
+const char* password = "XXXX"; // Your Wifi Password
+
+const char*  server = "XXXX.com";  // Server URL
+
+const char* Jaysa_Root_CA = \
+"-----BEGIN CERTIFICATE-----\n" \
+" Your certificate "
+"-----END CERTIFICATE-----\n";
+
+client.println("GET https://blog.jaysa.net/ HTTP/1.1");
+client.println("Host: blog.jaysa.net");
 ```
 4. Connect and Upload it to your ESP 32 
 
@@ -40,6 +60,14 @@ $ cd Profilometer
 
 ### Rendering it on the monochrome display yields the following result:
 ![image](https://github.com/user-attachments/assets/e76d8206-620f-41c5-989f-af7a30287563)
+
+## Including a custom Xbitmap
+### Paste your custom Xbitmap in the following array
+```c++
+static const unsigned char PROGMEM web_xbmp[]{...}
+```
+# Final Result
+![image](https://github.com/user-attachments/assets/a8bc6057-2f6b-4195-a75f-d9dd07e1d54f)
 
 
 
