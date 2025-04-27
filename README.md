@@ -67,10 +67,4 @@ client.println("Host: blog.jaysa.net");
 static const unsigned char PROGMEM web_xbmp[]{...}
 ```
 # Final Result
-![image](https://github.com/user-attachments/assets/a8bc6057-2f6b-4195-a75f-d9dd07e1d54f)
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/eba61323-a466-4cea-b53b-1da81a691251)
