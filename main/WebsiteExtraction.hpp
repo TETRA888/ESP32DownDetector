@@ -12,4 +12,4 @@ extern Adafruit_SSD1306 display;
 void EstablishWifiConnect();
 bool SendRequestToServer();
 
-#endif // WEBSITE_EXTRACTION_HPP
+#endif

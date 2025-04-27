@@ -1,15 +1,13 @@
 #include "ServerStatusGraphics.hpp"
 
 /*
-#define SCREEN_WIDTH 128 // OLED display width, in pixels
-#define SCREEN_HEIGHT 64 // OLED display height, in pixels
-
-#define OLED_RESET 4 // Reset pin for OLED
-
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET); // Creating display object
+  Creating display object
 */
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-// This is a Xbitmap of the website logo created using GIMP
+/*
+  This is a Xbitmap of the website logo created using GIMP
+*/
 static const unsigned char PROGMEM web_xbmp[]{
    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -55,7 +53,9 @@ static const unsigned char PROGMEM web_xbmp[]{
    0x80, 0x00, 0x04, 0x00, 0x3e, 0x00, 0xce, 0x1f, 0xc7, 0x00, 0x04, 0x00,
    0x03, 0x00, 0xfc, 0x3f, 0xc7, 0x00, 0x04, 0x00 };
 
-// This is a Xbitmap of the heart created using GIMP
+/*
+  This is a Xbitmap of the heart created using GIMP
+*/
 #define heart_width 70
 #define heart_height 64
 static const unsigned char PROGMEM heart_bits[] = {
@@ -108,6 +108,9 @@ static const unsigned char PROGMEM heart_bits[] = {
    0x00, 0x1e, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0x00,
    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
 
+/*
+  An array of romantic words
+*/
 const char* romanticWords[] PROGMEM = {
 "endlessly dreams about walking through starlit gardens with", "can't imagine a life without the tender embrace of", "writes secret love poems by candlelight dedicated to", 
 "counts the minutes until the next precious moment with", "sees a universe of possibilities in the eyes of",
@@ -231,6 +234,10 @@ void printCredits(){
   display.display();
 }
 
+/*
+    This function prints Asad <3 Loves Jaysa !!! on the display
+    @return None
+*/
 void printLoveSequence(){
   display.clearDisplay();
   display.setTextSize(2);
@@ -238,19 +245,24 @@ void printLoveSequence(){
   display.setCursor(16, 32);
   display.println(F("Asad <3"));
   display.display();
-  delay(2000);
+  delay(500);
   display.clearDisplay();
   display.setCursor(16, 32);
   display.println(F("Loves"));
   display.display();
-  delay(2000);
+  delay(500);
   display.clearDisplay();
   display.setCursor(16, 32);
   display.println(F("Jaysa !!!"));
   display.display();
-  delay(2000);
+  delay(500);
 }
 
+/*
+    This function prints a random romantic word from the romanticWords array
+    @param None 
+    @return None
+*/
 void printLoveSequenceRandom(){
   display.clearDisplay();
   display.setTextSize(2);
@@ -285,11 +297,9 @@ void setupDisplay() {
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
   display.clearDisplay();
   printCredits();
-  delay(2000);
+  delay(1000);
   display.clearDisplay();
   display.display();
   printLoveSequence();
   display.clearDisplay();
-  drawScrollingHeart();
-  delay(2000);
 }

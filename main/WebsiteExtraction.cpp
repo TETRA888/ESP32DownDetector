@@ -1,15 +1,29 @@
 #include "WebsiteExtraction.hpp"
 #include "ServerStatusGraphics.hpp"
 
-const char* ssid = "XXXX"; // Your Wifi SSID
+/*
+  Wifi SSID
+*/
+const char* ssid = "XXXX";
 
-const char* password = "XXXX"; // Your Wifi Password
+/*
+  Wifi Password
+*/
+const char* password = "XXXX";
 
+/*
+  Server URL
+*/
 const char*  server = "jaysa.net";  // Server URL
 
+/*
+  client object
+*/
 WiFiClientSecure client;
 
-// Root server certificate for a secure connection, replace it with the root certificate of your server
+/*
+  Root server certificate for a secure connection, replace it with the root certificate of your server
+*/
 const char* Jaysa_Root_CA = \
 "-----BEGIN CERTIFICATE-----\n" \
 "MIIFazCCA1OgAwIBAgIRAIIQz7DSQONZRGPgu2OCiwAwDQYJKoZIhvcNAQELBQAw\n" \
@@ -43,6 +57,11 @@ const char* Jaysa_Root_CA = \
 "emyPxgcYxn/eR44/KJ4EBs+lVDR3veyJm+kXQ99b21/+jh5Xos1AnX5iItreGCc=\n" \
 "-----END CERTIFICATE-----\n"; 
 
+/*
+  This function establishes a wifi connection with the provided SSID and password.
+  @param None 
+  @return None
+*/
 void EstablishWifiConnect(){
   display.invertDisplay(false);
   display.clearDisplay();
@@ -50,7 +69,7 @@ void EstablishWifiConnect(){
   display.setTextSize(1);
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(0,0);
-  display.println(F("Attempting to connect to SSID: "));
+  display.println(F("Attempting to connect to SSID"));
   display.display();
   display.println(F(ssid));
   display.display();
@@ -62,12 +81,17 @@ void EstablishWifiConnect(){
     delay(1000);
   }
 
-  display.println(F("Connected! to "));
+  display.println(F("Connected! to SSID"));
   display.println(F(ssid));
 
   display.display(); // Display all content
 }
 
+/*
+  This function establishes a secure connection and then sends a request to the server and extracts the content from the <span> tags.
+  @param None 
+  @return bool - true if successful, false otherwise
+*/
 bool SendRequestToServer(){
   display.clearDisplay();
   // Display messages
