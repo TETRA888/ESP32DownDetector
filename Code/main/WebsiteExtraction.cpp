@@ -1,4 +1,5 @@
 #include "WebsiteExtraction.hpp"
+#include "ServerStatusGraphics.hpp"
 
 const char* ssid = "XXXX"; // Your Wifi SSID
 
@@ -43,18 +44,22 @@ const char* Jaysa_Root_CA = \
 "-----END CERTIFICATE-----\n"; 
 
 void EstablishWifiConnect(){
+  display.invertDisplay(false);
+  display.clearDisplay();
   // Display messages
   display.setTextSize(1);
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(0,0);
   display.println(F("Attempting to connect to SSID: "));
+  display.display();
   display.println(F(ssid));
+  display.display();
 
   // Begin wifi connection
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     // wait 100ms to retry
-    delay(100);
+    delay(1000);
   }
 
   display.println(F("Connected! to "));
@@ -63,7 +68,12 @@ void EstablishWifiConnect(){
   display.display(); // Display all content
 }
 
-void SendRequestToServer(){
+bool SendRequestToServer(){
+  display.clearDisplay();
+  // Display messages
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(0,0);
   client.setCACert(Jaysa_Root_CA);
   display.println(F("Attempting Secure Connection"));
 
@@ -111,11 +121,19 @@ void SendRequestToServer(){
 
         // Extract and print the content
         String spanContent = htmlContent.substring(contentStart, contentEnd);
+        display.clearDisplay();
+        spanContent.trim();
+        display.setTextSize(1);
+        display.setTextColor(SSD1306_WHITE);
+        display.setCursor(0,0);       
         display.println(spanContent);
+        display.display(); // Display the content on the screen
+        delay (500);
 
         // Move to next position
         startPos = contentEnd + 7; // 7 is length of "</span>"
       }
       client.stop();
+      return true;
   }
 }

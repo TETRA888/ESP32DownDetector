@@ -1,11 +1,13 @@
 #include "ServerStatusGraphics.hpp"
 
+/*
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 
 #define OLED_RESET 4 // Reset pin for OLED
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET); // Creating display object
+*/
 
 // This is a Xbitmap of the website logo created using GIMP
 static const unsigned char PROGMEM web_xbmp[]{
@@ -204,4 +206,5 @@ void setupDisplay() {
   drawScrollingHeart();
   delay(1000);
   display.clearDisplay();
+  display.display();
 }

@@ -7,7 +7,9 @@
 #include <string.h>
 #include "ServerStatusGraphics.hpp"
 
+extern Adafruit_SSD1306 display;
+
 void EstablishWifiConnect();
-void SendRequestToServer();
+bool SendRequestToServer();
 
 #endif // WEBSITE_EXTRACTION_HPP
