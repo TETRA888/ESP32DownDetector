@@ -108,6 +108,47 @@ static const unsigned char PROGMEM heart_bits[] = {
    0x00, 0x1e, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0x00,
    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
 
+const char* romanticWords[] PROGMEM = {
+"endlessly dreams about walking through starlit gardens with", "can't imagine a life without the tender embrace of", "writes secret love poems by candlelight dedicated to", 
+"counts the minutes until the next precious moment with", "sees a universe of possibilities in the eyes of",
+"finds complete peace in the gentle whispers of", "creates a sanctuary of love and trust with", "believes in forever when looking into the eyes of",
+"carries the heart and soul intertwined with", "discovers new reasons to fall deeper in love with",
+"builds castles in the clouds of forever with", "dances through life's storms safely in the arms of", "weaves dreams of tomorrow alongside",
+"treasures every smile and laugh shared with", "falls more deeply in love each passing day with", 
+"catches falling stars to grant the wishes of", "paints a masterpiece of devotion dedicated to", "journeys through the tapestry of time beside",
+"composes a symphony of adoration inspired by", "navigates life's ocean with an unwavering compass pointing to",
+"holds sacred the precious memories created with", "wraps their soul in the warmest embrace when thinking of", "discovers paradise in the gentle touch of",
+"carries a flame that will never dim for", "breathes easier knowing the world contains",
+"crafts a legacy of unwavering devotion with", "saves every whispered promise exchanged with", "travels across lifetimes to find again",
+"believes in magic since the first moment with", "unlocks chambers of the heart previously unknown before",
+"experiences time standing still during moments shared with", "follows the moonlight path that always leads to", "plants gardens of eternal devotion tended with",
+"writes their love story across the constellations with", "discovers the meaning of forever in the arms of",
+"protects fiercely the sacred bond formed with", "celebrates each heartbeat synchronized with", "witnesses miracles in ordinary moments beside",
+"transforms ordinary days into extraordinary memories with", "keeps safely the keys to chambers of their heart with",
+"lights candles of remembrance for every precious moment with", "traces invisible threads of destiny connecting to", "crosses oceans of time to reunite with",
+"honors the sacred promise of devotion made to", "remembers vividly the first moment their eyes met",
+"enters a realm of pure wonder when embracing", "creates worlds of tenderness meant only for", "awakens to possibilities never imagined before meeting",
+"whispers secrets of the universe into the waiting ear of", "builds monuments of devotion dedicated solely to",
+"carries photographs of cherished moments with", "feels completely seen and understood in the presence of", "discovers hidden strength through the unwavering faith of",
+"crosses mountains and valleys to remain beside", "captures fleeting moments of perfect harmony with",
+"holds safely the most vulnerable parts of themselves with", "grows more beautiful with each passing year beside", "trusts completely the tender care provided by",
+"believes in miracles since the day they met", "elevates ordinary moments into sacred memories with",
+"crafts love letters sealed with promises meant for", "preserves each precious memory created alongside", "witnesses time slowing during perfect moments with",
+"transforms challenges into opportunities for growth alongside", "guards zealously the sacred bond forged with",
+"perceives beauty in previously overlooked places because of", "revels in quiet moments of perfect understanding with", "intertwines their destiny willingly with",
+"cherishes whispered confessions in darkness shared with", "illuminates previously shadowed corners of their heart for",
+"crafts invisible crowns of adoration placed upon", "witnesses stars falling in celebration of moments with", "discovers infinite patience when waiting for",
+"builds bridges across impossible divides to reach", "creates sanctuaries of perfect peace alongside",
+"remembers vividly the exact moment they fell for", "elevates ordinary days with extraordinary love for", "measures time by moments of bliss shared with",
+"navigates stormy waters with unwavering faith in", "creates universes of possibility through devotion to",
+"cultivates gardens of endless wonder together with", "discovers new depths of feeling each day with", "etches moments of perfect harmony into memory with",
+"holds galaxies of dreams waiting to be explored with", "weaves tapestries of tomorrow's promises with",
+"feels completely at home in the gentle embrace of", "discovers pieces of themselves they never knew through", "captures eternity in fleeting glances exchanged with",
+"believes in destiny since the fortuitous meeting with", "writes chapters of unending devotion alongside",
+"creates masterpieces of affection dedicated to", "treasures quiet moments of perfect silence beside", "discovers courage previously unknown through loving",
+"preserves carefully every shared secret entrusted by", "witnesses miracles in ordinary moments because of"
+};
+
 /*
     This function prints that the server is online
     @param None 
@@ -190,6 +231,48 @@ void printCredits(){
   display.display();
 }
 
+void printLoveSequence(){
+  display.clearDisplay();
+  display.setTextSize(2);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(16, 32);
+  display.println(F("Asad <3"));
+  display.display();
+  delay(2000);
+  display.clearDisplay();
+  display.setCursor(16, 32);
+  display.println(F("Loves"));
+  display.display();
+  delay(2000);
+  display.clearDisplay();
+  display.setCursor(16, 32);
+  display.println(F("Jaysa !!!"));
+  display.display();
+  delay(2000);
+}
+
+void printLoveSequenceRandom(){
+  display.clearDisplay();
+  display.setTextSize(2);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(16, 32);
+  display.println(F("Asad <3"));
+  display.display();
+  delay(2000);
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setCursor(0, 16);
+  display.println(F(romanticWords[rand() % 100]));
+  display.display();
+  delay(6000);
+  display.clearDisplay();
+  display.setTextSize(2);
+  display.setCursor(16, 32);
+  display.println(F("Jaysa !!!"));
+  display.display();
+  delay(2000);
+}
+
 /*
     This function sets up the display and prints the credits
     @param None 
@@ -203,8 +286,10 @@ void setupDisplay() {
   display.clearDisplay();
   printCredits();
   delay(2000);
-  drawScrollingHeart();
-  delay(1000);
   display.clearDisplay();
   display.display();
+  printLoveSequence();
+  display.clearDisplay();
+  drawScrollingHeart();
+  delay(2000);
 }

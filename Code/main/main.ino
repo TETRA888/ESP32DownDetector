@@ -26,6 +26,9 @@ void setup(){
 }
 
 void loop(){
+  for(int i = 0; i < 10; i++){
+  display.clearDisplay();
+
   drawWebsiteLogo();
 
   if(websiteOnline){
@@ -34,6 +37,25 @@ void loop(){
   else{
     printOfflineStatus();
   }
+
+  delay(5000);
+
+  display.clearDisplay();
+  drawWebsiteLogo();
+  printLoveSequenceRandom();
+  }
+
+  display.clearDisplay();
+
+  drawWebsiteLogo();
+
+  if(websiteOnline){
+    printOnlineStatus();
+  }
+  else{
+    printOfflineStatus();
+  }
+
   delay(1000*60*60*12); // Delay for 12 hours
 
   display.clearDisplay();
@@ -42,8 +64,8 @@ void loop(){
   display.setCursor(0,8);       
   display.println(F("ESP going into deep sleep"));
   display.display();
-  delay(5000);
-  esp_sleep_enable_timer_wakeup(DAY);
+
+  esp_sleep_enable_timer_wakeup(1000*60*60*12);
   esp_deep_sleep_start();
   websiteOnline = SendRequestToServer();
 }

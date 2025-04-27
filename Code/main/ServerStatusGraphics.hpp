@@ -2,6 +2,7 @@
 #define SERVER_STATUS_GRAPHICS_HPP
 
 #include <Arduino.h>
+#include <stdlib.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -18,5 +19,6 @@ void drawWebsiteLogo();
 void drawScrollingHeart();
 void printCredits();
 void setupDisplay();
+void printLoveSequenceRandom();
 
 #endif
